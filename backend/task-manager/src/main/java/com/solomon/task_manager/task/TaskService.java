@@ -33,7 +33,7 @@ public class TaskService {
         Task newTask = Task.builder()
                 .title(createTaskCommand.title())
                 .description(createTaskCommand.description())
-                .completed(createTaskCommand.completed())
+                .completed(createTaskCommand.completed() != null && createTaskCommand.completed())
                 .build();
 
         return taskRepository.save(newTask);
