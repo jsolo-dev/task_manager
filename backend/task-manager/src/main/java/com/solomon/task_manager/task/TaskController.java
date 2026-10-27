@@ -4,6 +4,7 @@ import com.solomon.task_manager.task.command.CreateTaskCommand;
 import com.solomon.task_manager.task.command.UpdateTaskCommand;
 import com.solomon.task_manager.task.dto.TaskRequest;
 import com.solomon.task_manager.task.dto.TaskResponse;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class TaskController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public TaskResponse createTask(@RequestBody TaskRequest taskRequest) {
+    public TaskResponse createTask(@RequestBody @Valid TaskRequest taskRequest) {
         return taskMapper.toResponse(taskService.createTask(new CreateTaskCommand(
                 taskRequest.title(),
                 taskRequest.description(),
@@ -46,7 +47,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public TaskResponse updateTask(@PathVariable UUID id, @RequestBody TaskRequest taskRequest) {
+    public TaskResponse updateTask(@PathVariable UUID id, @Valid @RequestBody TaskRequest taskRequest) {
         return taskMapper.toResponse(taskService.updateTaskById(new UpdateTaskCommand(
                 id,
                 taskRequest.title(),
