@@ -31,7 +31,6 @@ public class TaskService {
 
     public Task createTask(CreateTaskCommand createTaskCommand) {
         Task newTask = Task.builder()
-                .id(createTaskCommand.id())
                 .title(createTaskCommand.title())
                 .description(createTaskCommand.description())
                 .completed(createTaskCommand.completed())
