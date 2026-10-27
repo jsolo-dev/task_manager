@@ -5,7 +5,7 @@ import com.solomon.task_manager.task.dto.TaskResponse;
 import com.solomon.task_manager.task.entity.Task;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface TaskMapper {
 
     Task toEntity(TaskRequest task);
