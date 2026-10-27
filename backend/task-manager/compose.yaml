@@ -1,0 +1,14 @@
+services:
+  postgres:
+    container_name: postgres_db
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: solomon
+      POSTGRES_PASSWORD: changemeinprod!
+    volumes:
+      - pgData:/var/lib/postgresql
+
+volumes:
+  pgData:

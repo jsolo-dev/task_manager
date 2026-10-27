@@ -1,3 +1,15 @@
 spring:
   application:
     name: task-manager
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: solomon
+    password: changemeinprod!
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
