@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/config/injection_container.dart';
 
 void main() {
+  init();
   runApp(const MyApp());
 }
 
