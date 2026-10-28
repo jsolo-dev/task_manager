@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_manager/core/constants/app_color.dart';
 import 'package:task_manager/core/constants/app_size.dart';
 import 'package:task_manager/core/constants/app_spacing.dart';
+import 'package:task_manager/features/tasks/presentation/widget/context_menu_button.dart';
 
 class Header extends StatefulWidget {
   const Header({super.key});
@@ -27,18 +28,7 @@ class _HeaderState extends State<Header> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: IconButton(
-              style: IconButton.styleFrom(
-                foregroundColor: AppColor.primaryText,
-                backgroundColor: AppColor.surface,
-                fixedSize: Size(AppSize.xl2, AppSize.xl2),
-              ),
-              onPressed: () {},
-              icon: Icon(Icons.more_vert),
-            ),
-          ),
+          Align(alignment: Alignment.centerRight, child: ContextMenuButton()),
         ],
       ),
     );
