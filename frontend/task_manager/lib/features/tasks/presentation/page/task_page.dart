@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/constants/app_color.dart';
 import 'package:task_manager/core/constants/app_spacing.dart';
+import 'package:task_manager/features/tasks/presentation/widget/add_task_button.dart';
 import 'package:task_manager/features/tasks/presentation/widget/header.dart';
 import 'package:task_manager/features/tasks/presentation/widget/task_list.dart';
 
@@ -22,6 +23,7 @@ class TaskPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: AddTaskButton(),
     );
   }
 }
