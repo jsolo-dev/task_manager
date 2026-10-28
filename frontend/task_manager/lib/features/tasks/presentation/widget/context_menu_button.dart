@@ -43,7 +43,7 @@ class _ContextMenuState extends State<ContextMenu> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ContextMenuItem(label: "Info", onPressed: () {}),
+        ContextMenuItem(label: "Edit", onPressed: () {}),
         ContextMenuItem(label: "Delete", onPressed: () {}),
       ],
     );

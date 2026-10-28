@@ -4,6 +4,7 @@ import 'package:task_manager/core/constants/app_radius.dart';
 import 'package:task_manager/core/constants/app_size.dart';
 import 'package:task_manager/core/constants/app_spacing.dart';
 import 'package:task_manager/features/tasks/domain/entity/task_entity.dart';
+import 'package:task_manager/features/tasks/presentation/widget/task_info_dialog.dart';
 
 class TaskCard extends StatefulWidget {
   final TaskEntity task;
@@ -25,7 +26,14 @@ class _TaskCardState extends State<TaskCard> {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(AppRadius.lg),
-          onTap: () {},
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return TaskInfoDialog(task: widget.task);
+              },
+            );
+          },
           splashColor: AppColor.primary,
           child: Padding(
             padding: EdgeInsets.all(AppSpacing.lg),
