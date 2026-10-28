@@ -38,4 +38,15 @@ public class GlobalExceptionHandler {
                 request.getDescription(false).replace("uri=", "")
         ), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ExceptionResponse> globalExceptionHandler(RuntimeException exception, WebRequest request) {
+        System.out.println(exception.getMessage());
+        return new ResponseEntity<>(new ExceptionResponse(
+                LocalDateTime.now(),
+                500,
+                "Internal Server Error",
+                request.getDescription(false).replace("uri=", "")
+        ), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
