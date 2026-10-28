@@ -9,6 +9,7 @@ import "package:task_manager/features/tasks/domain/usecase/delete_task_by_id_use
 import "package:task_manager/features/tasks/domain/usecase/get_all_tasks_usecase.dart";
 import "package:task_manager/features/tasks/domain/usecase/get_task_by_id_usecase.dart";
 import "package:task_manager/features/tasks/domain/usecase/update_task_usecase.dart";
+import "package:task_manager/features/tasks/presentation/bloc/task/task_bloc.dart";
 import "package:task_manager/features/tasks/presentation/bloc/tasklist/task_list_bloc.dart";
 
 final GetIt sl = GetIt.instance;
@@ -25,5 +26,6 @@ void init() {
     ..registerLazySingleton(() => CreateTaskUsecase(sl()))
     ..registerLazySingleton(() => UpdateTaskUsecase(sl()))
     ..registerLazySingleton(() => DeleteTaskByIdUsecase(sl()))
-    ..registerFactory(() => TaskListBloc(sl()));
+    ..registerFactory(() => TaskListBloc(sl()))
+    ..registerFactory(() => TaskBloc(sl(), sl(), sl()));
 }
