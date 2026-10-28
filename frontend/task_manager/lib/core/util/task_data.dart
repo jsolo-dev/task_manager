@@ -1,6 +1,6 @@
 import 'package:task_manager/features/tasks/domain/entity/task_entity.dart';
 
-List<TaskEntity> task_data = [
+List<TaskEntity> taskData = [
   TaskEntity(
     title: "Go running",
     description: "Run around the compound",

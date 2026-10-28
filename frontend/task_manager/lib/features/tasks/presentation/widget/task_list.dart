@@ -8,9 +8,9 @@ class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: task_data.length,
+      itemCount: taskData.length,
       itemBuilder: (context, index) {
-        return TaskCard(task: task_data.elementAt(index));
+        return TaskCard(task: taskData.elementAt(index));
       },
     );
   }
