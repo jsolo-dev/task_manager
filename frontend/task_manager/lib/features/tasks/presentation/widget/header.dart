@@ -14,7 +14,7 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSpacing.md),
+      padding: EdgeInsets.symmetric(vertical: AppSpacing.md),
       child: Stack(
         children: [
           Align(
